@@ -108,6 +108,7 @@ img {
     background:lightgrey;
     border-radius: 15px;
     margin-bottom: 10px;
+    border: 1px solid black;
 }
 
 #messageLabel{
