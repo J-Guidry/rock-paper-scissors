@@ -1,5 +1,16 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body {
-    background: #E3E5EB;
+    background: #BDC7E5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 img {
@@ -7,32 +18,76 @@ img {
     height:300px;
     display: block;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
-#scoreBoard {
-    border-radius: 15px;
-    width:250px;
-    display: block;
-    margin: 15px auto;
+@media screen and (max-width: 800px){
+    img {
+        width: 500px;
+        height:300px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
 }
+
+@media screen and (max-width: 500px){
+    img {
+        width: 300px;
+        height:300px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
 #choices{
     background: lightgrey;
-    width:180px;
+    width:200px;
     display: block;
     margin: 15px auto;
     padding: 10px;
     border-radius: 15px;
 }
 
+#scoreBoard {
+    border-radius: 15px;
+    width:200px;
+    display: block;
+    margin: 15px auto;
+}
+
 .score {
     background: lightgrey;
-    padding: 15px;
-
+    margin-bottom: 20px;
     border:solid black 1px;
     border-radius: 15px;
 }
 
 .label {
-    width:150px;
-    padding-left: 10px;
+    padding: 15px;
+    display: inline-block;
+    width: 75px;
+    text-align: left;
+    border-right: solid black 1px;
+}
+
+@font-face{
+    font-family:'digital-7';
+    src: url('digital-7.ttf');
+   }
+
+.scorePoint {
+    font-family: 'digital-7';
+    display: inline-block;
+    width: 115px;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+footer {
+    background: grey;
+    width: 100%;
+    padding: 10px;
+    margin-top: auto;
 }
