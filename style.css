@@ -15,7 +15,7 @@ body {
 
 img {
     width: 800px;
-    height:300px;
+    height:290px;
     display: block;
     margin: 0 auto;
     margin-top: 20px;
@@ -24,7 +24,7 @@ img {
 @media screen and (max-width: 800px){
     img {
         width: 500px;
-        height:300px;
+        height:290px;
         display: block;
         margin: 0 auto;
         margin-top: 20px;
@@ -34,7 +34,7 @@ img {
 @media screen and (max-width: 500px){
     img {
         width: 300px;
-        height:300px;
+        height:290px;
         display: block;
         margin: 0 auto;
         margin-top: 20px;
@@ -101,6 +101,28 @@ img {
     font-size: 1.6em;
 }
 
+#messageBox{
+    height: 90px;
+    width: 350px;
+    margin: 0 auto;
+    background:lightgrey;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+#messageLabel{
+    font-size: 1.3em;
+    padding: 33px 0;
+    margin-left: 20px;
+    display: inline-block;
+    width: 90px;
+    border-right: solid black 1px;
+}
+
+#message{
+    font-size: 1.2em;
+    margin-left: 10px;
+}
 footer {
     background: grey;
     width: 100%;
