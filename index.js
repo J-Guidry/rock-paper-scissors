@@ -3,6 +3,32 @@ const data = {
     losses: 0,
     ties:0,
     rounds: 0,
+    game: function(playerChoice){
+        if (this.rounds < 5){
+            let message = this.playRound(playerChoice);
+            return message;
+         }
+    },
+    playRound: function(playerChoice){
+        const AIchoice = this.AISelection();
+        let message = "";
+        if (playerChoice > AIchoice){
+            message = "Won"
+            this.wins++;
+            this.rounds++;
+            return message;
+        } else if (playerChoice === AIchoice){
+            message = "Tie"
+            this.ties++;
+            this.rounds++;
+            return message
+        } else{
+            message = "Lose"
+            this.losses++;
+            this.rounds++;
+            return message
+        }
+    },
 }
 
 const UI = {
