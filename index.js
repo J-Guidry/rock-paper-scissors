@@ -9,6 +9,10 @@ const data = {
             return message;
          }
     },
+    AISelection: function(){
+        AIchoice = Math.floor(Math.random() * 3)
+        return AIchoice;
+    },
     playRound: function(playerChoice){
         const AIchoice = this.AISelection();
         let message = "";
@@ -27,6 +31,12 @@ const data = {
             this.losses++;
             this.rounds++;
             return message
+        }
+    },
+    checkRounds: function(){
+        if (this.rounds === 5){
+            let check = true; 
+            return check;
         }
     },
 }
