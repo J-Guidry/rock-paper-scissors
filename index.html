@@ -12,9 +12,9 @@
     <img src="assets/RPS.svg" alt="vector image of rock paper scissor with hands">
 
     <div id="choices">
-        <a class="choice" href="#" id="rock">ROCK</a>
-        <a class="choice" href="#" id="paper">PAPER</a>
-        <a class="choice" href="#" id="scissors">SCISSORS</a>
+        <a class="choice" href="#" id="rock" onclick="handlers.chooseRock()">ROCK</a>
+        <a class="choice" href="#" id="paper" onclick="handlers.choosePaper()">PAPER</a>
+        <a class="choice" href="#" id="scissors" onclick="handlers.chooseScissors()">SCISSORS</a>
     </div>
     <div id="messageBox">
         <span id="messageLabel">Message</span>
@@ -23,19 +23,19 @@
     <div id="scoreBoard">
         <div class="score">
             <span class="label">Rounds</span>
-            <span class="scorePoint">/</span>
+            <span id="rounds" class="scorePoint">/</span>
         </div>
         <div class="score">
             <span class="label">Wins</span>
-            <span class="scorePoint">/</span>
+            <span id="wins"class="scorePoint">/</span>
         </div>
         <div class="score">
             <span class="label">Losses</span>
-            <span class="scorePoint">/</span>
+            <span id="losses"class="scorePoint">/</span>
         </div>
         <div class="score">
             <span class="label">Ties</span>
-            <span class="scorePoint">/</span>
+            <span id="ties"class="scorePoint">/</span>
         </div>
     </div>
     <footer>
