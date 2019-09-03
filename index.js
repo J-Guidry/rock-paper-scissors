@@ -1,5 +1,8 @@
 const data = {
-
+    wins: 0,
+    losses: 0,
+    ties:0,
+    rounds: 0,
 }
 
 const UI = {
@@ -28,8 +31,8 @@ const handlers = {
     checkRounds: function(){
         let check = data.checkRounds();
         if (check === true){
-            data.endGame();
-            UI.endgame();
+            let result = data.endGame();
+            UI.endgame(result);
         }
     }
 }
