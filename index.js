@@ -39,6 +39,23 @@ const data = {
             return check;
         }
     },
+    endGame: function(){
+        if (this.wins > this.losses){
+            let result = "You won the game";
+            this.resetGame();
+            return result;
+        } else {
+            let result = "You lost the game";
+            this.resetGame()
+            return result;
+        }
+    },
+    resetGame: function(){
+        this.wins = 0;
+        this.losses = 0;
+        this.ties = 0;
+        this.rounds = 0;
+    }
 }
 
 const UI = {
