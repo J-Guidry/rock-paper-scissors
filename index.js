@@ -64,28 +64,33 @@ const data = {
 }
 
 const UI = {
- update:function(result){
-     
-    if (result.message === "Won"){
-        this.youWon(result);
-    } else if(result.message === "Lose"){
-        this.youLost(result);
-    } else {
-        document.querySelector("#message").textContent = "You tied!"
-    }
+    update:function(result){
+        if (result.message === "Won"){
+            this.youWon(result);
+        } else if(result.message === "Lose"){
+            this.youLost(result);
+        } else {
+            document.querySelector("#message").textContent = "You tied!"
+            document.querySelector("#losses").textContent++;
+
+        }
  },
- youWon: function(result){
-    let message = document.querySelector("#message");
-    if (result.player === 0 && result.AI === 2) {
-        message.textContent = "You won! Rock beats paper.";
-    } else if (result.player === 1 && result.AI === 0){
-        message.textContent = "You won! Paper beats scissors.";
-    } else if(result.player === 2 && result.AI === 1){
-        message.textContent = "You won! Scissors beats paper";
-    }
+    youWon: function(result){
+        let message = document.querySelector("#message");
+        let wins = document.querySelector("#wins");
+        if (result.player === 0 && result.AI === 2) {
+            message.textContent = "You won! Rock beats paper.";
+        } else if (result.player === 1 && result.AI === 0){
+            message.textContent = "You won! Paper beats scissors.";
+        } else if(result.player === 2 && result.AI === 1){
+            message.textContent = "You won! Scissors beats paper";
+        }
+        wins.textContent++;
+
  },
  youLost: function(result){
-    let message = document.querySelector("#message");
+        let message = document.querySelector("#message");
+        let losses = document.querySelector("#losses");
         if (result.player === 2 && result.AI === 0) {
             message.textContent = "You lost! Rock beats paper.";
         } else if (result.player === 0 && result.AI === 1){
@@ -93,6 +98,7 @@ const UI = {
         } else if(result.player === 1 && result.AI === 2){
             message.textContent = "You lost! Scissors beats paper";
         }
+        losses.textContent++;
     }
 }
 const handlers = {
