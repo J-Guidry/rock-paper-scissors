@@ -15,22 +15,27 @@ const data = {
     },
     playRound: function(playerChoice){
         const AIchoice = this.AISelection();
-        let message = "";
-        if (playerChoice > AIchoice){
-            message = "Won"
+        let result = {message: "", player: playerChoice, AI: AIchoice};
+
+        if ((playerChoice === 0 && AIchoice === 2) ||
+            (playerChoice === 1 && AIchoice === 0) ||
+            (playerChoice === 2 && AIchoice === 1)){
+            result.message = "Won"
             this.wins++;
             this.rounds++;
-            return message;
-        } else if (playerChoice === AIchoice){
-            message = "Tie"
-            this.ties++;
-            this.rounds++;
-            return message
-        } else{
-            message = "Lose"
+            return result;
+        } else if ((playerChoice === 2 && AIchoice === 0) ||
+        (playerChoice === 0 && AIchoice === 1) ||
+        (playerChoice === 1 && AIchoice === 2)){
+            result.message = "Lose"
             this.losses++;
             this.rounds++;
-            return message
+            return result;
+        } else if (playerChoice === AIchoice){
+            result.message = "Tie"
+            this.ties++;
+            this.rounds++;
+            return result;
         }
     },
     checkRounds: function(){
@@ -46,7 +51,7 @@ const data = {
             return result;
         } else {
             let result = "You lost the game";
-            this.resetGame()
+            this.resetGame();
             return result;
         }
     },
@@ -59,26 +64,28 @@ const data = {
 }
 
 const UI = {
-
+ update:function(result){
+    
+ }
 }
 
 const handlers = {
     chooseRock: function(){
         const rock = 0;
-        let message = data.game(rock);
-        UI.update(message);
+        let result = data.game(rock);
+        UI.update(result);
         this.checkRounds()
     },
     choosePaper: function(){
         const paper = 1;
-        let message = data.game(paper);
-        UI.update(message);
+        let result = data.game(paper);
+        UI.update(result);
         this.checkRounds();
     },
     chooseScissors: function(){
         const scissors = 2;
-        let message = data.game(scissors);
-        UI.update(message);
+        let result = data.game(scissors);
+        UI.update(result);
         this.checkRounds();
     },
     checkRounds: function(){
