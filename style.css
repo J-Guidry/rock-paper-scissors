@@ -124,6 +124,27 @@ img {
     font-size: 1.2em;
     margin-left: 10px;
 }
+
+#resetBox{
+    background: lightgrey;
+    width:130px;
+    display: none;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+#resetButton{
+    display:inline-block;
+    text-decoration:none;
+    font-weight: bold;
+    border: 1px solid black;
+    color: #fff;
+    background-color: #538fbe;
+    padding: 10px;
+    cursor: pointer;
+}
 footer {
     background: grey;
     width: 100%;

@@ -46,11 +46,11 @@ const data = {
     },
     endGame: function(){
         if (this.wins > this.losses){
-            let result = "You won the game";
+            let result = "You won the game!";
             this.resetGame();
             return result;
         } else {
-            let result = "You lost the game";
+            let result = "You lost the game!";
             this.resetGame();
             return result;
         }
@@ -88,7 +88,7 @@ const UI = {
         wins.textContent++;
 
  },
- youLost: function(result){
+    youLost: function(result){
         let message = document.querySelector("#message");
         let losses = document.querySelector("#losses");
         if (result.player === 2 && result.AI === 0) {
@@ -99,6 +99,27 @@ const UI = {
             message.textContent = "You lost! Scissors beats paper";
         }
         losses.textContent++;
+    },
+    endGame: function(result){
+        let message = document.querySelector("#message");
+        message.textContent = result;
+        this.resetButton();
+    },
+    resetButton: function(){
+        const resetBox = document.querySelector("#resetBox");
+        const button = document.createElement("button");
+        resetBox.style.display = "block";
+        button.id = "resetButton";
+        button.textContent = "Reset Game";
+        button.onclick = this.resetScore;
+        resetBox.appendChild(button);
+    },
+    resetScore: function(){
+        document.querySelector("#message").textContent = "Choose One to Start";
+        document.querySelector("#rounds").textContent = 0;
+        document.querySelector("#wins").textContent = 0;
+        document.querySelector("#losses").textContent = 0;
+        document.querySelector("#ties").textContent = 0;
     }
 }
 const handlers = {
@@ -124,7 +145,7 @@ const handlers = {
         let check = data.checkRounds();
         if (check === true){
             let result = data.endGame();
-            UI.endgame(result);
+            UI.endGame(result);
         }
     }
 }
