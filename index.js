@@ -106,20 +106,25 @@ const UI = {
         this.resetButton();
     },
     resetButton: function(){
-        const resetBox = document.querySelector("#resetBox");
+        const board = document.querySelector("#scoreBoard");
         const button = document.createElement("button");
-        resetBox.style.display = "block";
+        const box = document.createElement("div");
+        box.id = "resetBox";
+        box.style.display = "block";
         button.id = "resetButton";
         button.textContent = "Reset Game";
         button.onclick = this.resetScore;
-        resetBox.appendChild(button);
+        box.appendChild(button);
+        board.appendChild(box);
     },
-    resetScore: function(){
+    resetScore: function(event){
         document.querySelector("#message").textContent = "Choose One to Start";
         document.querySelector("#rounds").textContent = 0;
         document.querySelector("#wins").textContent = 0;
         document.querySelector("#losses").textContent = 0;
         document.querySelector("#ties").textContent = 0;
+
+        event.target.parentNode.remove();
     }
 }
 const handlers = {
